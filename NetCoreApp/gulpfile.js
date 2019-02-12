@@ -3,7 +3,7 @@ var gnf = require("gulp-npm-files");
 var del = require("del");
 
 gulp.task("clean", function () {
-    return del(["./wwwroot/lib/" + "/**/*"]);
+    return del(["./wwwroot/node_modules/" + "/**/*"]);
 });
 
 gulp.task("copynpm", function (done) {
