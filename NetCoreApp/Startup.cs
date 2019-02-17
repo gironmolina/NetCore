@@ -20,8 +20,11 @@ namespace NetCoreApp
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/error");
+            }
 
-            //app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc(cfg =>
             {
