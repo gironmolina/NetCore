@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "defaultProvider": "filesystem",
+  "libraries": [
+    {
+      "library": "node_modules/bootstrap/dist/css/",
+      "destination": "wwwroot/libs/css/",
+      "files": [
+        "bootstrap.min.css"
+      ]
+    },
+    {
+      "library": "node_modules/bootstrap/dist/js/",
+      "destination": "wwwroot/libs/js/",
+      "files": [
+        "bootstrap.min.js"
+      ]
+    },
+    {
+      "library": "node_modules/jquery/dist/",
+      "destination": "wwwroot/libs/js/",
+      "files": [
+        "jquery.min.js"
+      ]
+    },
+    {
+      "library": "node_modules/jquery-validation/dist/ ",
+      "destination": "wwwroot/libs/js/",
+      "files": [
+        "jquery.validate.min.js"
+      ]
+    },
+    {
+      "library": "node_modules/jquery-validation-unobtrusive/dist/",
+      "destination": "wwwroot/libs/js/",
+      "files": [
+        "jquery.validate.unobtrusive.min.js"
+      ]
+    },
+    {
+      "provider": "filesystem",
+      "library": "node_modules/font-awesome/css/",
+      "destination": "wwwroot/libs/css/",
+      "files": [
+        "font-awesome.min.css"
+      ]
+    },
+    {
+      "library": "node_modules/font-awesome/fonts/",
+      "destination": "wwwroot/libs/fonts/",
+      "files": [
+        "fontawesome-webfont.eot",
+        "fontawesome-webfont.ttf",
+        "fontawesome-webfont.woff"
+      ]
+    }
+  ]
+}
