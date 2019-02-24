@@ -25,9 +25,10 @@ namespace NetCoreApp
             {
                 cfg.UseSqlServer(_config.GetConnectionString("DutchConnectionString"));
             });
-            services.AddTransient<INullMailService, NullMailService>();
-            // Support for real mail service
 
+            services.AddTransient<INullMailService, NullMailService>();
+            services.AddTransient<DutchSeeder>();
+            services.AddScoped<IDutchRepository, DutchRepository>();
             services.AddMvc();
         }
 
@@ -49,6 +50,16 @@ namespace NetCoreApp
                 cfg.MapRoute("Default", "{controller}/{action}/{id?}",
                     new {controller = "App", Action = "Index"});
             });
+
+            if (env.IsDevelopment())
+            {
+                // Seed the database
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var seeder = scope.ServiceProvider.GetService<DutchSeeder>();
+                    seeder.Seed();
+                }
+            }
         }
     }
 }
